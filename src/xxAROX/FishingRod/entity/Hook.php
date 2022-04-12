@@ -126,7 +126,11 @@ class Hook extends Projectile
 	 * @return void
 	 */
 	public function delete(): void{
-		$this->flagForDespawn();
+		try {
+			$this->flagForDespawn();
+		} catch (Exception $ex) {
+		
+		}
 
 		$owner = $this->getOwningEntity();
 		if ($owner instanceof Player) {
